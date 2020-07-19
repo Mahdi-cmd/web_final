@@ -1,0 +1,223 @@
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  text-align: right;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 10px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: right;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+  text-align: right;
+}
+
+/* Add a background color and some padding around the form */
+.container1 {
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: right;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 25px;
+  margin-bottom: 200px;
+}
+
+.contact{
+  padding-top: 50px;
+  text-align: center;
+}
+
+option{
+  float: right;
+  text-align: right;
+  align-content: flex-end;
+}
+
+
+
+
+
+
+
+.site-footer
+{
+  background-color:#1ccc51;
+  padding:2.8125rem 0 1.25rem;
+  font-size:0.9375rem;
+  line-height:1.5rem;
+  color:#737373;
+  border-radius: 0.625rem;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:1.25rem 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:1rem;
+  text-transform:uppercase;
+  margin-top:0.125rem;
+  letter-spacing:0.125rem
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:2.5rem;
+  height:2.5rem;
+  line-height:2.5rem;
+  margin-left:0.375rem;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:61.9375rem)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:47.9375rem)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:0.25rem;
+}
+.social-icons li.title
+{
+  margin-right:0.9375rem;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:0.8125rem;
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:1.000em;
+  display:inline-block;
+  line-height:2.750em;
+  width:2.750em;
+  height:2.750em;
+  text-align:center;
+  margin-right:0.500em;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:2.125em;
+  height:2.125em;
+  width:2.125em;
+  font-size:0.875em;
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:47.938em)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}

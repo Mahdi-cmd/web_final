@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <meta charset="utf-8"/>
+<head>
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+       <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="style3.css">
+
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+/>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./charity.png">
+
+    <title>تبرع هنا</title>
+</head>
+<body>
+
+
+  <div  data-aos="fade-right" >
+    <img class="logo" src="./charity.png" alt="">
+</div>
+
+  
+    <div class="nav"  data-aos="fade-right">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            تبرعكم
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+
+        <span id="signup-form"></span>
+  <span id="login-form"></span>
+        
+
+
+
+        <div class="nav-links">
+          <a class="login" href="account.html"  >الحساب</a>
+      <a class="login" href="#" id="logout" >تسجيل خروج</a>
+      <a class="logout" href="login.html" >تسجيل</a>
+      <a  href="./donate.html" >تبرع هنا</a>
+      <a  href="Contact_us.html" >تواصل معنا</a>
+      <a  href="About_us.html" >من نحن؟</a>
+      <a  href="index.html" >الصفحة الرئيسية</a>
+        </div>
+      </div>
+   
+      <div class="container ">
+        <div class="col-md-12">
+          <div class="row donate-bar">  
+            <div class="col-md-4 theme-blue">
+              <div class="tabara3">
+              تبرع الى المحتاجين
+            </div>
+            </div>
+            <div class="col-md-8">
+              <ul class="nav navbar-nav navbar-left donate-buttons" id="donate-buttons">
+                <li><a href="#">
+                  <button class="btn-blue active" data-dollars='25' data-impact="يغطي خدمات الإسكان أو المشورة لشخص واحد">
+                    25KD
+                  </button>
+                </a></li>
+                <li><a href="#">
+                  <button class="btn-blue" data-dollars='50' data-impact="يغطي خدمات الإسكان أو المشورة لشخصين">
+                    50KD
+                  </button>
+                </a></li>
+                <li><a href="#">
+                  <button class="btn-blue" data-dollars='100' data-impact="يغطي خدمات الإسكان أو المشورة لأربعة أشخاص">
+                    200KD
+                  </button>
+                </a></li>
+                <li><a href="#">
+                  <button class="btn-blue" data-dollars='500' data-impact="يغطي خدمات الإسكان أو الاستشارات لعشرين شخصا">
+                    500KD
+                  </button>
+                </a></li>
+                <li id="other"><a href="#">
+                  <button class="btn-blue-other" data-dollars='other' data-impact="شكرا لك">
+                    مبلغ آخر
+                  </button>
+                </a></li>
+                <li id="other-input">
+                  <span>KD</span>
+                 <input type="text" data-impact="شكرا لك">
+                </li>
+                <li><a href="#">
+                  <button class="btn-green" data-toggle="modal" data-target="#myModal">
+                    تبرع
+                  </button>
+                </a></li>
+                <li style="display: none;"><a href="#">
+                  تعرف اكثر<i class="fa fa-chevron-right margin-left"></i>
+                </a></li>
+              </ul>
+              <p class="impact">
+                يغطي خدمات الإسكان أو المشورة لشخص واحد
+              </p>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header well text-center theme-background-blue">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">اغلق</span></button>
+                      <h2>أنت تتبرع</h2>
+                      <h1 style="font-size: 5.5em; margin-top: 0;">KD<span id="price"></span></h1>
+                      <em>شكرا لك</em>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">  
+                        <section class="col-md-12">
+                          <form>
+                            <fieldset class="col-md-6">
+                              <legend>
+                                معلوماتك الشخصية
+                              </legend>
+                              <label>اسمك</label>
+                              <input type="string" class="form-control">
+                              <label>بريدك الالكتروني</label>
+                              <input type="email" class="form-control">
+                              <label>العنوان</label>
+                              <input type="email" class="form-control">
+                              <label>المدينة ، الولاية ، الرمز البريدي</label>
+                              <input type="email" class="form-control">
+                            </fieldset>
+                            <fieldset class="col-md-6">
+                              <legend>
+                                معلومات بطاقة الائتمان
+                              </legend>
+                              <label for="card-number">رقم بطاقه الائتمان</label>
+                              <input placeholder="1234 5678 9012 3456" pattern="[0-9]*" type="text" class="form-control card-number" id="card-number">
+                              <label for="card-number">تاريخ الإنتهاء</label>
+                              <input placeholder="MM/YY" pattern="[0-9]*" type="text" class="form-control card-expiration" id="card-expiration">
+                              <label for="card-number">رقم السيرة الذاتية</label>
+                              <input placeholder="CVV" pattern="[0-9]*" type="text" class="form-control card-cvv" id="card-cvv">
+                              <label for="card-number">الفواتير الرمز البريدي</label>
+                              <input placeholder="ZIP" pattern="[0-9]*" type="text" class="form-control card-zip" id="card-zip">
+                            </fieldset>
+                          </form>
+                        </section>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">عودة</button>
+                      <button type="button" id="saveButton" class="btn-green">استمر</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </div>
+          </div><!--/.donate-bar-->
+        </div><!-- /.col-md-12 -->
+
+
+
+        <div data-aos="fade-right">
+        <h1 class="donate12">لماذا تتبرع؟</h1>
+        <h3 class="donate13">لانك عندما تتبرع تقوم بعمل انساني عظيم ، فعندما تساعد الفئة المحتاجة فانك تسهم بارتقائهم من الناحية العلمية و الصحية</h3>
+        <h3 class="donate14">و تشير اللآية التالية باهمية التصدق و التبرع عند اللّه :يَسْأَلُونَكَ مَاذَا يُنْفِقُونَ قُلْ مَا أَنْفَقْتُمْ مِنْ خَيْرٍ فَلِلْوَالِدَيْنِ وَالْأَقْرَبِينَ وَالْيَتَامَى وَالْمَسَاكِينِ وَابْنِ السَّبِيلِ وَمَا تَفْعَلُوا مِنْ خَيْرٍ فَإِنَّ اللَّهَ بِهِ عَلِيمٌ
+        </h3>
+      </div>
+
+
+
+
+     
+
+  
+
+
+
+
+
+       <!-- Site footer -->
+       <div  data-aos="fade-up">
+        <footer class="site-footer">
+           <div class="container">
+             <div class="row">
+               <div class="col-sm-12 col-md-6">
+                 <h6>من نحن؟</h6>
+                 <p class="text-justify"> <i>نبني لكم مستقبلا باهرا</i> نحن فريق يسعى لتقديم يد العون للمحتاجين في كافة المجالات الصحية،التعليمية و الدينية، حيث نوصل تبرعاتكم بطريقة سهلة و سريعةز بمساهمتكم نستطيع توفير مسقبل اجمل لجميع الفئات المحتاجة شاكرين لكم انضمامكم بمشروع تبرعكم</p>
+               </div>
+       
+       
+               <div class="col-xs-6 col-md-3">
+                 <h6>روابط سريعة</h6>
+                 <ul class="footer-links">
+                   <li><a href="./index.html">الصفحة الرئيسية</a></li>
+                   <li><a href="About_us.html">من نحن؟</a></li>
+                   <li><a href="Contact_us.html">تواصل معنا</a></li>
+                   <li><a href="donate.html">تبرع اللآن</a></li>
+                 </ul>
+               </div>
+             </div>
+             <hr>
+           </div>
+           <div class="container">
+             <div class="row">
+               <div class="col-md-8 col-sm-6 col-xs-12">
+                 <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+              <a href="#">تبرعكم</a>.
+                 </p>
+               </div>
+       
+               <div class="col-md-4 col-sm-6 col-xs-12">
+                 <ul class="social-icons">
+                   <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                   <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                   <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                   <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                 </ul>
+               </div>
+             </div>
+           </div>
+       </footer>
+       </div> 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+    
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCM8By0OqKVw2Lg0GXrYbm0O_32WgAbSS0",
+        authDomain: "project-ac329.firebaseapp.com",
+        databaseURL: "https://project-ac329.firebaseio.com",
+        projectId: "project-ac329",
+        storageBucket: "project-ac329.appspot.com",
+        messagingSenderId: "746258907281",
+        appId: "1:746258907281:web:73ca2b0597bee5b949bf30",
+        measurementId: "G-2HBFLGSQ9V"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      
+    </script>
+      
+      <!-- Compiled and minified JavaScript -->
+    
+    
+           <script src="https://code.responsivevoice.org/responsivevoice.js?key=NxlnKDKc"></script>  
+    
+       
+    
+    
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="js.js"></script>
+        <script src="db.js"></script>
+        <script src="auth.js"></script>   
+        <script src="index.js"></script>
+</body>
+</html>
