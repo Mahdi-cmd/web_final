@@ -1,0 +1,95 @@
+.img1{
+    text-align: center;
+    display: block;
+    margin-top: 50px;
+    
+}
+
+
+
+.diff{
+    
+    display: inline-block;
+}
+
+.button1{
+    display: inline-block;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.diff1{
+   
+    
+    display: inline-block;
+    
+}
+
+
+.diff2{
+    
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+.diff3{
+    
+    display: inline-block;
+    margin-left: 130px;
+}
+
+.diff4{
+    
+    display: inline-block;
+    margin-left: 85px;
+}
+
+.teacher{
+    margin-bottom: 50px;
+    color: #287EC7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button1{
+    margin-left: 100px;
+}
+
+.teacher{
+    margin-top: 20px;
+}
+
+body {
+    background-color: #121620;
+    color: white;
+  }
+
+  img{
+      border-radius: 50%;
+  }
+
+
+
+
+
+  .title{
+      color: rgb(28, 135, 235);
+  }
